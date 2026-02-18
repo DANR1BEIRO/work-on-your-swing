@@ -8,7 +8,8 @@ public class MakeAWindow {
 
 
     public static void main(String[] args) {
-        go();
+        // go();
+        layoutManager();
     }
 
     public static void go() {
@@ -28,6 +29,34 @@ public class MakeAWindow {
 
         // display it (give it a size and make it visible)
         frame.setSize(1000, 1000);
+        frame.setVisible(true);
+    }
+
+    public static void layoutManager() {
+
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        JPanel checkBoxes = new JPanel();
+        checkBoxes.setPreferredSize(new Dimension(200, 50));
+
+        checkBoxes.add(new JCheckBox("checkbox1"));
+        checkBoxes.add(new JCheckBox("checkbox2"));
+        checkBoxes.add(new JCheckBox("checkbox3"));
+
+        JPanel buttons = new JPanel();
+        buttons.add(new JButton("Button 1"));
+        buttons.add(new JButton("Button 2"));
+        buttons.add(new JButton("Button 3"));
+
+        JPanel panelA = new JPanel(new BorderLayout());
+        panelA.setBackground(Color.red);
+        panelA.add(buttons);
+
+        frame.getContentPane().add(panelA, NORTH);
+        frame.getContentPane().add(checkBoxes, SOUTH);
+
+        frame.setSize(500, 500);
         frame.setVisible(true);
     }
 
