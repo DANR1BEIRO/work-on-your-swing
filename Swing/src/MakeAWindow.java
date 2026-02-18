@@ -9,7 +9,8 @@ public class MakeAWindow {
 
     public static void main(String[] args) {
         // go();
-        layoutManager();
+        // layoutManager();
+        borderLayoutTest();
     }
 
     public static void go() {
@@ -57,6 +58,27 @@ public class MakeAWindow {
         frame.getContentPane().add(checkBoxes, SOUTH);
 
         frame.setSize(500, 500);
+        frame.setVisible(true);
+    }
+
+    public static void borderLayoutTest() {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        JButton center = new JButton("center");
+        JButton north = new JButton("north");
+        JButton east = new JButton("east");
+        JButton south = new JButton("south");
+        JButton west = new JButton("west");
+        Font bigFont = new Font("serif", Font.BOLD, 28);
+
+        // add button and specify the region
+        frame.getContentPane().add(NORTH, north);
+        frame.getContentPane().add(WEST, west);
+        frame.getContentPane().add(SOUTH, south);
+        frame.getContentPane().add(EAST, east);
+        frame.getContentPane().add(CENTER, center);
+        frame.setSize(1000, 1000);
+        frame.setLocationRelativeTo(null); // this centers it on the screen
         frame.setVisible(true);
     }
 
